@@ -9,8 +9,6 @@ Autores:   Manuel López Amo-Ocón
            Alejangro Galván Pérez-Ilzarbe
            Santiago Cebellán
            Alejandro Meza Tudela
-           
-Fecha de versión final: 01-08-2020 
 '''
 
 
