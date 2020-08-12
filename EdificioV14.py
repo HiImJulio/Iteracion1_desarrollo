@@ -66,7 +66,6 @@ class Edificio(ABC):
             
     
     #Metodo que imprime los atributos de la clase
-    @abstractmethod
     def __str__(self):
             return str(self.numeroEdificio) + ", " + str(self.capacidadEdificio) + ", " + str(self.numerodepartamentos) + ", " + self.tipo
     
