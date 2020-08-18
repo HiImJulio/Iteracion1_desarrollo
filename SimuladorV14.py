@@ -34,7 +34,6 @@ Lista de atributos:
                     numpersonasinicial: entero que representa el numero de personas iniciales de la simulacion
                     numpersonas: entero que representa el numero de personas de la simulacion.
                     numedificios: entero que representa el numero de edificios totales. 
-                    capacidades : array que contiene las capacidades de los edificios
                     CatalogoPersonas: lista que contiene a las personas de la simulacion
                     cementerio: lista que contiene las personas muertes debido a la enfermedad
                     RegistroSanos: lista que contiene a los individuos que estan sanos
@@ -54,7 +53,6 @@ class Simulador:
             self.numpersonasinicial=numpersonas 
             self.numViviendas=len(self.ciudadViviendas)
             self.numOficinas=len(self.ciudadOficinas)
-            #self.capacidades=np.zeros(self.numedificios)
             self.CatalogoPersonas=self.crearPoblacion()
             
             self.acomodarGente() #llamada al metodo definido un poco mas abajo 
