@@ -21,7 +21,7 @@ import pandas as pd
 
 #importacion de la clase persona 
 from PersonaV13 import *
-from EdificioV14 import *
+from EdificioV15 import *
  
 
 #Clase Simulador: contiene lo necesario para llevar a cabo la simulacion
