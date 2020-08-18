@@ -20,7 +20,7 @@ from scipy.stats import rv_discrete
 import pandas as pd
 
 #importacion de la clase persona 
-from PersonaV12 import *
+from PersonaV13 import *
 from EdificioV14 import *
  
 
