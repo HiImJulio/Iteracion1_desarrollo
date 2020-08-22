@@ -311,11 +311,12 @@ class Simulador:
                         TercerPorcentaje += 1
                     elif  60 < self.cementerio[i].edad:
                         CuartoPorcentaje += 1
-
-                PrimerPorcentaje = PrimerPorcentaje/len(self.cementerio)
-                SegundoPorcentaje = SegundoPorcentaje/len(self.cementerio)
-                TercerPorcentaje = TercerPorcentaje/len(self.cementerio)
-                CuartoPorcentaje = CuartoPorcentaje/len(self.cementerio)
+                
+                total = len(self.cementerio)
+                PrimerPorcentaje = PrimerPorcentaje/total
+                SegundoPorcentaje = SegundoPorcentaje/total
+                TercerPorcentaje = TercerPorcentaje/total
+                CuartoPorcentaje = CuartoPorcentaje/total
                 porcentajes= [ PrimerPorcentaje,SegundoPorcentaje,TercerPorcentaje,CuartoPorcentaje ]
 
                 plt.pie(porcentajes, labels=edades)
