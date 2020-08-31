@@ -64,7 +64,6 @@ class Simulador:
             self.serviciosDisponibles=[] #lista de servicios
              #metodo que se procedera a describir a continuacion
             self.CatalogoPersonas=self.crearPoblacion()
-            self.RegistroSanos=[]
             self.acomodarGente()
             self.rellenarServicios()
             self.cementerio=[]
