@@ -46,6 +46,9 @@ Lista de atributos:
                     RegistroMuertos: lista que contiene los individuos que van muriendo
                     mortalidadEdadesCovid : lista de listas, que contiene la probabilidad de muerte dependiendo de ciertos rangos
                                             de edad
+                    tiempoCreacion: numero que representa el tiempo de creacion de algunas partes de interes del simulador
+                    tiempoPorDias: lista que contiene el tiempo por dias
+                    tiempoPorHoras: lista que contiene el tiempo por horas
 '''
 
 class Simulador:
@@ -171,7 +174,7 @@ class Simulador:
                 
          #Metodo que simula el paso del tiempo de la simulacion         
         def pasar_tiempo(self,mediaincubacion,desvincubacion,mediaduracion,desvduracion,posibilidadContagio):
-            t_inicio=time.time()
+            t_inicio=time.time() #se inicia la medicion del tiempo
             self.RegistroSanos.append(self.personas_sanas())
             self.RegistroInfectados.append(self.personas_infectadas())
             if (self.hora<23):
@@ -200,7 +203,7 @@ class Simulador:
                 i.contagiarEdificio(posibilidadContagio,mediaincubacion,desvincubacion,self.dia)   
             
             
-            t_final=time.time()-t_inicio
+            t_final=time.time()-t_inicio #se finaliza la medicion del tiempo
             self.tiemposPorHoras.append(t_final)
             if len(self.tiemposPorHoras)==24:
                 self.tiemposPorDias.append(sum(self.tiemposPorHoras))
@@ -265,7 +268,8 @@ class Simulador:
             for i in personas:
                 i.estado="incubandoContagioso"
                 i.cambioEstado= cambioEstadoInicial
-    
+        
+        #Metodo que gracias a un CSV ,coge las edades de los individuos siguiendo esta una distribucion
         def generador_distribucion(self):
             datos_edad = pd.read_csv("distribucion_edad.csv")
             l=list(datos_edad.iloc[:,0]) # cogemos todos los datos de la primera columna, pertenecientes a todas las filas
@@ -362,7 +366,7 @@ class Simulador:
                     contador_infectados +=1              
             return contador_infectados 
         
-        
+        #Metedo que crea una grafica que imprime las defunciones por edades. Las edades han sido divididas en 4 franjas. 
         def defuncionesPorEdades(self):
             if(len(self.cementerio) == 0):
                 print("Nada que imprimir")
@@ -413,7 +417,7 @@ class Simulador:
                     
                                      
                     
-                           
+        #Menu que posibilita al usuario la posibilidad de elegir que grafica desea ver   
         def menuGraficas(self):
             sns.set()
             print("¡Welcome! Este es el menu que permite la visualizacion de algunas graficas")
